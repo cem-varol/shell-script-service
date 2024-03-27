@@ -1,0 +1,18 @@
+[Unit]
+Description=FS monitoring service
+Documentation=https://funoracleapps.com/
+
+[Service]
+Type=simple
+User=root
+Group=root
+TimeoutStartSec=0
+Restart=on-failure
+RestartSec=30s
+#ExecStartPre=
+ExecStart=/bin/bash /usr/local/bin/file-system-monitor.sh
+SyslogIdentifier=Diskutilization
+#ExecStop=
+
+[Install]
+WantedBy=multi-user.target

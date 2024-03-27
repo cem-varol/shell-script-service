@@ -1,0 +1,18 @@
+[Unit]
+Description=Reboot Logger Service
+Documentation=
+
+[Service]
+Type=simple
+User=root
+Group=root
+TimeoutStartSec=0
+Restart=on-failure
+RestartSec=30s
+#ExecStartPre=
+ExecStart=/bin/bash /usr/local/bin/reboot-logger.sh
+SyslogIdentifier=Diskutilization
+#ExecStop=
+
+[Install]
+WantedBy=multi-user.target
